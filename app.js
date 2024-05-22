@@ -1,18 +1,24 @@
 
-let square = document.getElementById('square');
+let square = document.createElement('img');
+
+square.src = 'https://lens-storage.storage.googleapis.com/png/bad3beb67b52450c8adf60fb9737f5a4'
+document.body.appendChild(square)
 
 
-square.style.width = '100px';
-square.style.height = '100px';
+let H = 500;
+let W = 500;
 
-square.style.backgroundColor = 'red';
+square.style.width = W + 'px';
+square.style.height = H + 'px';
+
+// square.style.backgroundColor = 'red';
 square.style.position = 'absolute';
 
 let x = 0;
 let y = 0;
 
-const speedx = 10;
-const speedy = 10;
+const speedx = 8;
+const speedy = 5;
 
 let vx = speedx;
 let vy = speedy;
@@ -22,25 +28,25 @@ console.log("SCHERMO: " + window.innerHeight);
 function moveSquare() {
 	console.log("y: " + y);
 	
-	if(y + 100 >= window.innerHeight) {
+	if(y + H >= window.innerHeight) {
 		vy = -speedy;
-		changeColorRandom();
-		changeShape()
+		// changeColorRandom();
+		// changeShape()
 	}
-	if(x + 100 >= window.innerWidth) {
+	if(x + W >= window.innerWidth) {
 		vx = -speedx;
-		changeColorRandom();
-		changeShape()
+		// changeColorRandom();
+		// changeShape()
 	}
 	if(x <= 0) {
 		vx = speedx;
-		changeColorRandom();
-		changeShape()
+		// changeColorRandom();
+		// changeShape()
 	}
 	if(y <= 0) {
 		vy = speedy;
-		changeColorRandom();
-		changeShape()
+		// changeColorRandom();
+		// changeShape()
 	}
 	x = x + vx;
 	y = y + vy;
